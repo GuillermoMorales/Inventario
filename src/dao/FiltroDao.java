@@ -41,7 +41,7 @@ public class FiltroDao implements metodos<Filtro>{
         {
             ps = con.getCnx().prepareStatement(SQL_INSERT);
             ps.setString(1, g.getCodigo());
-            ps.setString(2, g.getClass());
+            ps.setString(2, g.getMarca());
             ps.setInt(3, g.getStock());
             ps.setBoolean(4, true);
         } catch (SQLException ex) {
@@ -81,7 +81,7 @@ public class FiltroDao implements metodos<Filtro>{
             System.out.println(c.getCodigo());
             ps = con.getCnx().prepareStatement(SQL_UPDATE);
             ps.setString(1, c.getMarca());
-            ps.setInt(2, c.getStock);
+            ps.setInt(2, c.getStock());
             ps.setBoolean(3, c.getExistencia());
             ps.setString(4, c.getCodigo());
             if(ps.executeUpdate() > 0)
